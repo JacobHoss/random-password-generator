@@ -60,6 +60,8 @@ if (charCount >= 8 && charCount <= 128 ) {
     password=password.split('').sort(function(){return Math.random()}).join('');
 
     return password.substr(0,len);
+} else {
+    return "I told you to pick between 8 and 128 characters!";
 }
 }
 
