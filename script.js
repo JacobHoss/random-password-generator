@@ -27,33 +27,9 @@ function generatePassword( len ) {
 
     var character = "";
 
-    var crunch = true;
+if (charCount >= 8 && charCount <= 128 ) {
 
-
-if (loweryn === false && numyn === false && upperyn === false && puncyn === false) {
-
-alert("If you chose No for everything, then we won't give you a password...");
-
-}
-
- 
-
-if (charCount > 128) {
-
-alert("You can't have more than 128 characters!");
-
-}
-
- 
-
-if (charCount < 8) {
-
-alert("You can't have less than 8 characters!");
-
-}
-
-
-    while( password.length<charCount ) {
+    while ( password.length<charCount ) {
 
         entity1 = (lower.length * Math.random());
 
@@ -84,9 +60,8 @@ alert("You can't have less than 8 characters!");
     password=password.split('').sort(function(){return Math.random()}).join('');
 
     return password.substr(0,len);
-
 }
-
+}
 
  
 
