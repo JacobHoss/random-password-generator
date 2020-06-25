@@ -9,23 +9,29 @@ function generatePassword( len ) {
 
     var lower = "abcdefghijklmnopqrstuvwxyz";
 
-    var loweryn = confirm("Would you like to include lower case letters?");
+    var lowerChar = confirm("Would you like to include lower case letters?");
 
     var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    var upperyn = confirm("Would you like to include upper case letters?");
+    var upperChar = confirm("Would you like to include upper case letters?");
 
     var numeric = '0123456789';
 
-    var numyn = confirm("Would you like to include numeric characters?");
+    var numericChar = confirm("Would you like to include numeric characters?");
 
-    var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+    var special = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
 
-    var puncyn = confirm("Would you like to include Special Characters?");
+    var specialChar = confirm("Would you like to include special Characters?");
 
     var password = "";
 
     var character = "";
+
+    if (lowerChar === false && numericChar === false && upperChar === false && specialChar === false) {
+
+        return ("If you chose \"No\" for everything, then we won't give you a password...");
+        
+        }
 
 if (charCount >= 8 && charCount <= 128 ) {
 
@@ -35,7 +41,7 @@ if (charCount >= 8 && charCount <= 128 ) {
 
         entity2 = (numeric.length * Math.random());
 
-        entity3 = (punctuation.length * Math.random());
+        entity3 = (special.length * Math.random());
 
         entity4 = (upper.length * Math.random());
 
@@ -45,13 +51,13 @@ if (charCount >= 8 && charCount <= 128 ) {
 
         character += hold;
 
-        if (loweryn === true) {character += lower.charAt ( entity1 );}
+        if (lowerChar === true) {character += lower.charAt ( entity1 );}
 
-        if (numyn === true) {character += numeric.charAt( entity2 );}
+        if (numericChar === true) {character += numeric.charAt( entity2 );}
 
-        if (puncyn === true) {character += punctuation.charAt( entity3 );}
+        if (specialChar === true) {character += special.charAt( entity3 );}
 
-        if (upperyn === true) {character += upper.charAt( entity4 );}
+        if (upperChar === true) {character += upper.charAt( entity4 );}
 
         password = character;
 
