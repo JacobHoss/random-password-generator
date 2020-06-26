@@ -27,13 +27,15 @@ function generatePassword( len ) {
 
     var character = "";
 
+    // If the user selects "No" for every prompt, this If statement will run.
     if (lowerChar === false && numericChar === false && upperChar === false && specialChar === false) {
 
-        return ("If you chose \"No\" for everything, then we won't give you a password...");
+        return ("If you choose \"No\" for everything, then we won't give you a password...");
         
         }
 
-if (charCount >= 8 && charCount <= 128 ) {
+    // If the user inputs a value greater than or equal to 8, or less than or equal to 128, this If statement will run.
+    if (charCount >= 8 && charCount <= 128 ) {
 
     while ( password.length<charCount ) {
 
@@ -67,6 +69,7 @@ if (charCount >= 8 && charCount <= 128 ) {
 
     return password.substr(0,len);
 } else {
+    // This else statement returns text to the center box when the user inputs anything less than 8 or greater than 128
     return "I told you to pick between 8 and 128 characters!";
 }
 }
