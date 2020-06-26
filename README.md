@@ -6,4 +6,4 @@ This is a program that takes a user's inputs and outputs a random password. Depe
 
 ![Demo Picture](./assets/demo.jpg)
 
-[Link to the Program](https://jacobhoss.github.io/random-password-generator/)
+[Random Password Generator](https://jacobhoss.github.io/random-password-generator/)
